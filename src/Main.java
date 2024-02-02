@@ -1,17 +1,16 @@
+import java.sql.SQLOutput;
+
 public class Main {
     public static void main(String[] args) {
         System.out.println("Задача 1");
 
         int clientOS = 1;
-        switch (clientOS) {
-            case 0:
-                System.out.println("Установите версию приложения для iOS по ссылке");
-                break;
-            case 1:
-                System.out.println("Установите версию приложения для Android по ссылке");
-                break;
-            default:
-                System.out.println("Такой системы не существует");
+        if (clientOS == 0) {
+            System.out.println("Установите версию приложения для iOS по ссылке");
+        } else if (clientOS == 1) {
+            System.out.println("Установите версию приложения для Android по ссылке");
+        } else {
+            System.out.println("Ошибка");
         }
 
         System.out.println("Задача 2");
@@ -31,7 +30,7 @@ public class Main {
         System.out.println("Задача 3");
 
         int year = 2021;
-        if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
+        if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0 && year > 1584) {
             System.out.println(year + " год является високосным");
         } else {
             System.out.println(year + " год не является високосным");
